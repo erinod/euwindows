@@ -1,0 +1,20 @@
+{% load i18n cms_tags sekizai_tags %}
+
+
+
+<div class="contactlist" id="cmspluginContacts{{ contactlist.pk }}">
+<p>{{ contactlist.label }}</p>
+<ul>
+	{% for contact in contacts %}
+	<li>{{contact.title}}
+		<ul>
+			{% if contact.city %}<li class=city>{{contact.city}}</li>{% endif %}
+			{% if contact.address %}<li class=address>{{contact.address}}</li>{% endif %}
+			{% if contact.phone %}<li class=phone>{{contact.phone}}</li>{% endif %}
+			{% if contact.email %}<li class=email><a href=contact.email>{{contact.email}}</a></li>{% endif %}
+		</ul>
+	</li>
+	{% endfor %}
+</ul>
+</div>
+
