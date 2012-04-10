@@ -1,0 +1,8 @@
+{% load i18n %}
+
+<h1>{% trans "See entries for" %}:</h1>
+  <p>
+  {% for d in dates reversed %}
+    <a href="{% url blog_archive_month year=d|date:"Y",month=d|date:"m" %}">{{ d|date:"F Y" }}</a>
+  {% endfor %}
+  </p>

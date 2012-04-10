@@ -1,0 +1,8 @@
+{% load i18n %}
+
+<h1>{% trans "See entries tagged" %}:</h1>
+<p>
+  {% for tag in tags %}
+    <a href="{% url blog_archive_tagged tag=tag %}">{{ tag }}</a> 
+  {% endfor %}
+</p>

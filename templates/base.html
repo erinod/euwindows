@@ -1,0 +1,65 @@
+{% load cms_tags sekizai_tags menu_tags%}
+<!doctype html>
+<head>
+  <title>{{ request.current_page.get_title }}</title>
+  <link rel="stylesheet" href="/media/css/main.css" type="text/css">
+  <link rel="stylesheet" href="/media/css/menu.css" type="text/css">
+  <link rel="stylesheet" href="/media/css/right.css" type="text/css">
+  
+  <link rel="stylesheet" href="/media/css/cmsplugin-contacts.css" type="text/css">
+  {% render_block "css" %}
+  {% render_block "jsh" %}
+  {% block extrahead %}
+  {% endblock extrahead %}
+</head>
+
+<body>
+{% cms_toolbar %}
+<div id=top>
+	<div class='mainmenu'>
+	<div class='biglogo'></div>	
+		<ul class='toolbar'>
+			{% show_menu 0 0 %}
+		</ul>
+	
+		
+	</div>
+	{% placeholder "top" inherit or %}{% show_placeholder "top" 1 %}{% endplaceholder %}
+</div>
+
+<div id=middle>
+
+{% block left %}
+<div id=left>
+
+	<div id=leftmenu>
+		{% show_menu 1 2 %}
+	</div>
+	{% placeholder "left" inherit %}
+</div>
+{% endblock %}
+
+{% block body %}
+<div id=center>
+<h1 class=title>{{ request.current_page.get_title }}</h1>
+	{% placeholder "main" %}
+</div>
+{% endblock %}
+
+{% render_block "js" %}
+
+<div id=right>
+{% placeholder "right" inherit or %}{% show_placeholder "right" 1 %}{% endplaceholder %}
+</div>
+
+</div>
+<div id=bottom><ul>
+{% show_menu 0 1 1 1 %}<div class="clear-left"></ul>
+<div class="clear-left"></div>
+{% placeholder "bottom" inherit or %}{% show_placeholder "bottom" 1 %}{% endplaceholder %}
+</div>
+
+</body>
+</html>
+
+

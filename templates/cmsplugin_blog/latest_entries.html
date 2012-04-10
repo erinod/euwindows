@@ -1,0 +1,22 @@
+{% load i18n placeholder_tags simple_translation_tags djangocms_utils_tags %}
+
+{% block extrahead %}
+{{ block.super }}
+<link rel="alternate" type="application/rss+xml" title="RSS feed for tag &quot;{{ tag|escape }}&quot;" href="{% if request.LANGUAGE_CODE %}/{{ request.LANGUAGE_CODE }}{% endif %}{% url blog_rss_tagged tag %}" />
+<link rel="alternate" type="application/rss+xml" title="RSS feed for tag &quot;{{ tag|escape }}&quot; (any language)" href="{% if request.LANGUAGE_CODE %}/{{ request.LANGUAGE_CODE }}{% endif %}{% url blog_rss_any_tagged tag %}" />
+{% endblock extrahead %}
+
+{% for entry in latest|annotate_with_translations %}
+    {% with entry|get_preferred_translation_from_request:request as title %}
+    {% with entry.placeholders|choose_placeholder:"excerpt" as excerpt %}
+    <h3><a href="{{ title.get_absolute_url }}">{{ title }}</a>
+       {{ entry|render_language_choices:request|safe }}
+    </h3>
+    <p class="date"><span>{{ entry.pub_date|date:"d b Y" }}</span></p>
+
+    {% render_placeholder excerpt %}
+    {% endwith %}
+    {% endwith %}
+{% empty %}
+	<p>{% trans "No entries" %}</p>
+{% endfor %}

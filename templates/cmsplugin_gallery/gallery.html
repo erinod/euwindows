@@ -1,0 +1,29 @@
+{% load thumbnail sekizai_tags %}
+
+{% addtoblock "css" %}
+<link rel="stylesheet" href="/media/css/gallery.css" type="text/css">
+{% endaddtoblock %}
+
+{% addtoblock "jsh" %}
+<script type="text/javascript" src="/static/admin/js/jquery.min.js"></script>
+{% endaddtoblock %}
+
+<div class="gallery" id="cmspluginGallery{{ gallery.pk }}">
+	{% for image in images %}
+		<a href="{{ image.src.url }}">
+			<img src="{% thumbnail image.src 115x80 crop %}" alt="{{ image.alt }}" title="{{ image.title }}" rel="#cmspluginGalleryImage{{ image.pk }}" />
+		</a>
+	{% endfor %}
+</div>
+
+{% addtoblock "js" %}
+<script type="text/javascript">
+	jQuery('#cmspluginGallery{{ gallery.pk }} img').click( function () {
+		jQuery('.gallery_simple_overlay .gallery_img').attr( 'src' , jQuery(this).parent().attr('href') );
+		jQuery('.gallery_simple_overlay .gallery_title').html( jQuery(this).attr('title') );
+		jQuery('.gallery_simple_overlay .gallery_alt').html( jQuery(this).attr('alt') );
+		return false;
+	} );
+	jQuery('#cmspluginGallery{{ gallery.pk }} img')[0].click()
+</script>
+{% endaddtoblock %}

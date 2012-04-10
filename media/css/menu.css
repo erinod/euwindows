@@ -1,0 +1,189 @@
+.biglogo {
+background-image: url('/media/img/logo.png');
+background-repeat: no-repeat;
+position:relative;
+top:-115px;
+height:300px;
+margin-bottom:-195px;
+height:195px;
+width:500px;
+z-index:2;
+}
+
+.mainmenu {
+background:darkblue;
+background-image: url('/media/img/logo-mini-trans.png');
+text-align:right;
+padding-right:50px;
+padding-left:50px;
+padding-bottom:35px;
+padding-top:115px;
+box-shadow: inset 0 0 30px 0 rgba(0,0,0,0.4);
+font-family:sans-serif;
+z-index:1;
+}
+
+.toolbar li
+{
+margin:5px;
+display: inline-block;
+}
+
+.toolbar > li
+{
+	font: bold 16px ;
+	font-family: arial, sans-serif;
+
+    background-origin: padding-box, border-box;
+    background-clip: padding-box, border-box;
+    min-width:80px;
+	border: 1px solid transparent;
+    border-radius: 1em;
+    padding: 8px 12px;
+	
+	text-align:center;
+    text-decoration: none;
+
+    outline: 0;
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,0.5), 0 3px 6px -3px rgba(0,0,0,0.25);
+    
+/* 
+    background: #e4e4e4; 
+    background-image: linear-gradient(#f2f2f2, #e4e4e4 50%), linear-gradient(#e4e4e4, #ccc);
+    background-image: -o-linear-gradient(#f2f2f2, #e4e4e4 50%), -o-linear-gradient(#e4e4e4, #ccc);
+    background-image: -ms-linear-gradient(#f2f2f2, #e4e4e4 50%), -ms-linear-gradient(#e4e4e4, #ccc);
+    background-image: -moz-linear-gradient(#f2f2f2, #e4e4e4 50%), -moz-linear-gradient(#e4e4e4, #ccc);
+    background-image: -webkit-linear-gradient(#f2f2f2, #e4e4e4 50%), -webkit-linear-gradient(#e4e4e4, #ccc);
+*/
+}
+
+
+.toolbar li a,.toolbar li a:visited{
+	/* Styling the hyperlinks of the menu as buttons */
+	/*font-weight:bold;*/
+	/*color:#444;*/
+	color:#ddd;
+	text-decoration:none;
+}
+
+
+
+.toolbar {
+position:relative;
+z-index:20;
+	/* The navigation menu bar: */
+    display:inline-block;
+	background: #4D77D2;
+
+	background-image: linear-gradient(#4D77D2, #3158AC);
+	background-image: -o-linear-gradient(#4D77D2, #3158AC);
+	background-image: -ms-linear-gradient(#4D77D2, #3158AC);
+	background-image: -moz-linear-gradient(#4D77D2, #3158AC);
+	background-image: -webkit-linear-gradient(#4D77D2, #3158AC);
+
+    border: 1px solid transparent;
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,0.5), 0 3px 6px -3px rgba(0,0,0,0.25);
+	padding:5px 10px;
+
+}
+
+.toolbar {
+	/* CSS3 rounded corners for both the navigation bar and the buttons: */
+	-moz-border-radius:1em;
+	-webkit-border-radius:1em;
+	-khtml-border-radius:1em;
+	border-radius:1em;
+}
+
+.toolbar > * {
+vertical-align: baseline;
+}
+
+
+.toolbar li.selected, .toolbar li.ancestor, .toolbar li:hover {
+    background: #e4e4e4; 
+    background-image: linear-gradient(#f2f2f2, #e4e4e4 50%), linear-gradient(#e4e4e4, #ccc);
+    background-image: -o-linear-gradient(#f2f2f2, #e4e4e4 50%), -o-linear-gradient(#e4e4e4, #ccc);
+    background-image: -ms-linear-gradient(#f2f2f2, #e4e4e4 50%), -ms-linear-gradient(#e4e4e4, #ccc);
+    background-image: -moz-linear-gradient(#f2f2f2, #e4e4e4 50%), -moz-linear-gradient(#e4e4e4, #ccc);
+    background-image: -webkit-linear-gradient(#f2f2f2, #e4e4e4 50%), -webkit-linear-gradient(#e4e4e4, #ccc);
+}
+.toolbar li.selected a, .toolbar li.ancestor a, .toolbar li:hover a {
+	color: #444;
+}
+
+
+#logo {
+float:left;
+display:inline-block;
+background:url('../img/logo.png');
+}
+
+
+#leftmenu > li {
+display: block ;
+text-align:right;
+margin-top:2px;
+margin-right:-2px;
+
+}
+
+#leftmenu > li {
+background:#e4e4e4;
+
+font-family: arial, sans-serif;
+
+display: block ;
+border: 2px solid grey;
+
+border-top-left-radius:5px;
+border-bottom-left-radius:5px;
+min-height:1em;
+padding:5px;
+text-align:left;
+vertical-align:bottom;
+padding:0.5em;
+padding-left:2em;
+}
+
+#leftmenu > li.selected  , #leftmenu > li:hover {
+background:white;
+border-right-color: white;
+}
+
+#leftmenu > li ul {
+display:none;
+}
+
+#leftmenu > li.selected ul , #leftmenu > li:hover ul {
+display:list-item;
+text-align:left;
+margin-left:1em;
+}
+
+
+
+.clear-left {
+clear:left;
+}
+
+#bottom > ul {
+
+vertical-align:top;
+}
+
+#bottom > ul > li {
+width:200px;
+display: block ;
+float:left;
+}
+
+#bottom > ul li {
+margin:0.5em;
+margin-left:1em;
+}
+
+#bottom > ul a {
+color:#e4e4e4;
+}
+

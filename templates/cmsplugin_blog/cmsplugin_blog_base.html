@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load i18n placeholder_tags cmsplugin_blog_tags cms_tags sekizai_tags %}
+
+{% block extrahead %}
+{{ block.super }}
+<link rel="alternate" type="application/rss+xml" title="RSS feed" href="{% if request.LANGUAGE_CODE %}/{{ request.LANGUAGE_CODE }}{% endif %}{% url blog_rss %}" />
+<link rel="alternate" type="application/rss+xml" title="RSS feed (any language)" href="{% if request.LANGUAGE_CODE %}/{{ request.LANGUAGE_CODE }}{% endif %}{% url blog_rss_any %}" />
+{% endblock extrahead %}
+
+
+{% block body %}
+
+{% addtoblock "css" %}
+<link rel="stylesheet" href="/media/css/blog.css" type="text/css">
+{% endaddtoblock %}
+
+<div id=blog-left-col>
+{% block left-col %}{% endblock %}
+
+</div>
+{% endblock body %}
+
+{% block left %}
+    <div id=blog-right-col>
+	<div class=wrapper>
+	{% block right-col %}{% endblock %}
+	<br/>
+	{% placeholder "left" inherit %}
+	</div></div>
+
+
+{% endblock %}

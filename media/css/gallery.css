@@ -1,0 +1,20 @@
+.gallery_simple_overlay {
+border: 1px solid black;
+margin:20px;
+padding:12px;
+}
+
+.gallery_img {
+border: 2px solid black;
+width:100%;
+}
+
+.gallery_title {
+font-family:fantasy;
+font-weight: bolder;
+text-align:center;
+}
+
+.gallery_alt {
+font-style: italic;
+}

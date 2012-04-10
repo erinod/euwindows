@@ -1,0 +1,13 @@
+{% load i18n %}
+{% if link %}<a class=teaser href="{{ link }}">{% endif %}
+<div class='teaser' 
+{% if object.image %} style="background:url({{ object.image.url }})" {% endif %}
+alt="{{ object.title }}"/>
+<h2>{{ object.title|title }}</h2>
+
+{% if object.description %}
+<p>{{ object.description }}</p>
+{% endif %}
+{% if link %}<a class=teaser_more href="{{ link }}">{% trans "more" %} &#187;</a>{% endif %}
+</div>
+{% if link %}</a>{% endif %}

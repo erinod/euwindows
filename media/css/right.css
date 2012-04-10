@@ -1,0 +1,51 @@
+#right {
+	font-family: arial, sans-serif;
+}
+
+#right #email {
+	background: #4D77D2;
+	background-image: linear-gradient(#4D77D2, #3158AC);
+	background-image: -o-linear-gradient(#4D77D2, #3158AC);
+	background-image: -ms-linear-gradient(#4D77D2, #3158AC);
+	background-image: -moz-linear-gradient(#4D77D2, #3158AC);
+	background-image: -webkit-linear-gradient(#4D77D2, #3158AC);
+}
+
+#right > * 
+{
+    /*display:inline-block;*/
+float:right;
+clear:both;
+	color:#ddd;
+
+    border: 1px solid transparent;
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,0.5), 0 3px 6px -3px rgba(0,0,0,0.25);
+	padding:5px 10px;
+
+	border-top-left-radius:1em;
+}
+
+#right .orange {
+    background:#FFA500;
+	background-image: linear-gradient(#FFA500, #D49600);
+	background-image: -o-linear-gradient(#FFA500, #D49600);
+	background-image: -ms-linear-gradient(#FFA500, #D49600);
+	background-image: -moz-linear-gradient(#FFA500, #D49600);
+	background-image: -webkit-linear-gradient(#FFA500, #D49600);
+
+}
+.right-title, .right-title a {
+	color:#eee;
+	text-align:center;
+	font-weight:bolder;
+}
+
+.right-title:hover, .right-title a:hover {
+	color:white;
+}
+
+
+#right .hidencontent {
+float:right;
+margin-top:0.5em;
+}
